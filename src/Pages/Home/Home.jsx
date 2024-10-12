@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import TaskCard from '../Components/TaskCard/TaskCard';
-import AddTask from '../Components/AddTask/AddTask';
+import TaskCard from '../../Components/TaskCard/TaskCard';
+import AddTask from '../../Components/AddTask/AddTask';
 import { AnimatePresence, motion } from "framer-motion";
 import styles from './Home.module.css';
-import ToggleButton from '../Components/ToggleBtn/ToggleBtn';
+import ToggleButton from '../../Components/ToggleBtn/ToggleBtn';
 
 export default function HomePage() {
     const [tasks, setTasks] = useState(() => {
         const savedTasks = localStorage.getItem('TASKS');
         return savedTasks ? JSON.parse(savedTasks) : [];
     });
+
+    const [filter, setFilter] = useState("All");
 
     useEffect(() => {
         localStorage.setItem('TASKS', JSON.stringify(tasks));
@@ -55,14 +57,37 @@ export default function HomePage() {
         );
     };
 
+    // Filter tasks based on selected status
+    const filteredTasks = tasks.filter((task) => {
+        if (filter === "All") return true; // Show all tasks
+        return task.status === filter;
+    });
+
     return (
         <div className={styles.appContainer}>
             <div className={styles.appHeader}>
                 <h1 className={styles.appTitle}>Task Manager</h1>
                 <ToggleButton />
             </div>
+
             <div className={styles.todoCard}>
                 <AddTask onSubmit={handleAddTask} />
+
+                <div className={styles.filterContainer}>
+                    <label htmlFor="filter">Filter by Status:</label>
+                    <select
+                        id="filter"
+                        className={styles.filterSelect}
+                        value={filter}
+                        onChange={(e) => setFilter(e.target.value)}
+                    >
+                        <option value="All">All</option>
+                        <option value="Not Started">Not Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Finished">Finished</option>
+                    </select>
+                </div>
+
                 <AnimatePresence>
                     <motion.div
                         className={styles.taskList}
@@ -70,19 +95,21 @@ export default function HomePage() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
-                        {tasks.length === 0 ? (
+                        {filteredTasks.length === 0 ? (
                             <p>No tasks available</p>
                         ) : (
-                            tasks.map((task) => (
-                                <TaskCard
-                                    key={task.id}
-                                    task={task}
-                                    deleteTask={handleDeleteTask}
-                                    updateTaskStatus={handleStatusChange}
-                                    editTaskTitle={handleEditTaskTitle}
-                                    editTaskDescription={handleEditTaskDescription}
-                                />
-                            ))
+                            filteredTasks
+                                .sort((a, b) => (a.status === "Finished" ? 1 : -1))
+                                .map((task) => (
+                                    <TaskCard
+                                        key={task.id}
+                                        task={task}
+                                        deleteTask={handleDeleteTask}
+                                        updateTaskStatus={handleStatusChange}
+                                        editTaskTitle={handleEditTaskTitle}
+                                        editTaskDescription={handleEditTaskDescription}
+                                    />
+                                ))
                         )}
                     </motion.div>
                 </AnimatePresence>

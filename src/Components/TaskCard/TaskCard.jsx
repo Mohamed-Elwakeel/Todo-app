@@ -51,7 +51,7 @@ export default function TaskCard({
 
     return (
         <motion.div
-            className={styles.taskContainer}
+            className={`${styles.taskContainer} ${task.status === "Finished" ? styles.finishedTask : ""}`}
             initial={false}
             animate={{ opacity: 1, transform: "none" }}
             exit={{ opacity: 0 }}
@@ -70,8 +70,7 @@ export default function TaskCard({
                     ) : (
                         <div className={styles.taskHeader}>
                             <h3
-                                className={`${styles.taskText} ${task.status === "Finished" ? styles.completed : ""
-                                    }`}
+                                className={`${styles.taskText} ${task.status === "Finished" ? styles.completed : ""}`}
                                 onDoubleClick={() => setIsEditingTitle(true)}
                             >
                                 {task.title}
@@ -94,8 +93,7 @@ export default function TaskCard({
                     ) : (
                         <div className={styles.taskDescriptionContainer}>
                             <p
-                                className={`${styles.taskDescription} ${task.status === "Finished" ? styles.completed : ""
-                                    }`}
+                                className={`${styles.taskDescription} ${task.status === "Finished" ? styles.completed : ""}`}
                                 onDoubleClick={() => setIsEditingDescription(true)}
                             >
                                 {task.description}
