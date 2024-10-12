@@ -1,17 +1,26 @@
 # Todo App - Frontend
 
-- A simple and intuitive Todo App frontend built with React.js. This application provides two main pages for managing todos: Login, and Home
+- This is a simple and intuitive Todo App frontend built with React.js. It offers a clean user interface for managing tasks and provides two main pages for the user: Login and Home. The application is designed to handle essential task management functionalities and is responsive across different device sizes.
 
 
 ## Features
 
 - **Todo Management:**
-  - Add new tasks to the todo list.
+  - Add new tasks to your todo list.
+  - Edit tasks and descriptions inline.
   - Mark tasks as completed.
-  - Delete completed tasks from the list.
+  - Delete tasks from the list.
+  - Filter tasks by status: Not Started, In Progress, and Finished.
+ 
+- **User Authentication:**
+  - Login page to authenticate users before accessing the home page.
 
 - **Responsive Design:**
-  - The app is optimized for various screen sizes, providing a seamless experience on desktop and mobile devices.
+  - Optimized for various screen sizes (mobile, tablet, and desktop).
+  - Provides a seamless user experience across all devices.
+    
+- **Light and Dark Themes:**
+  - Easily toggle between light and dark modes to suit your preference. 
 
 ## Getting Started
 
@@ -50,10 +59,10 @@ Navigate to the Sign In, Sign Up, and Home pages to start managing your todos!
 
 - React.js: A JavaScript library for building user interfaces.
 - React Router: Declarative routing for React.js applications.
-- Styling (CSS3, Material UI): Used module.css and material ui icons.
-- Formik and Yup: Yup is a JavaScript schema builder for validating or parsing value.
+- CSS3 & Material UI: Styling, layout, and Material UI icons.
+- Formik & Yup: Form management and validation.
+- Framer Motion: Animation library for smooth transitions.
 
-  
 
 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests. Please follow the Contributing Guidelines.
