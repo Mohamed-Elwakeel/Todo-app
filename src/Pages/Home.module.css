@@ -1,0 +1,54 @@
+.appContainer {
+    background: url('../assets/12.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.todoCard {
+    background: url("../assets/debut_light.png");
+    width: 70%;
+    padding: 1.618em;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: .5rem;
+    box-shadow: 0 5px 15px #444, inset 0 -5px 35px #999;
+}
+
+.App-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.App-header>h2 {
+    color: #555;
+    font-size: clamp(1.25rem, 5vw, 2.5em);
+    font-family: 'Cabin', 'sans-serif';
+    font-weight: 700;
+    margin-block: 1.5rem;
+    text-align: center;
+}
+
+.appInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.appInfo div {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 40em) {
+    .todoCard {
+        width: 75%;
+    }
+
+    .appInfo {
+        width: 70%;
+    }
+
+}
