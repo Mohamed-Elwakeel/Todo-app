@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TaskCard from '../Components/TaskCard/TaskCard';
 import AddTask from '../Components/AddTask/AddTask';
+import { AnimatePresence, motion } from "framer-motion";
 import styles from './Home.module.css';
 
 export default function HomePage() {
@@ -58,22 +59,29 @@ export default function HomePage() {
             <h1 className={styles.appTitle}>Task Manager</h1>
             <div className={styles.todoCard}>
                 <AddTask onSubmit={handleAddTask} />
-                <div className={styles.taskList}>
-                    {tasks.length === 0 ? (
-                        <p>No tasks available</p>
-                    ) : (
-                        tasks.map((task) => (
-                            <TaskCard
-                                key={task.id}
-                                task={task}
-                                deleteTask={handleDeleteTask}
-                                updateTaskStatus={handleStatusChange}
-                                editTaskTitle={handleEditTaskTitle}
-                                editTaskDescription={handleEditTaskDescription}
-                            />
-                        ))
-                    )}
-                </div>
+                <AnimatePresence>
+                    <motion.div
+                        className={styles.taskList}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        {tasks.length === 0 ? (
+                            <p>No tasks available</p>
+                        ) : (
+                            tasks.map((task) => (
+                                <TaskCard
+                                    key={task.id}
+                                    task={task}
+                                    deleteTask={handleDeleteTask}
+                                    updateTaskStatus={handleStatusChange}
+                                    editTaskTitle={handleEditTaskTitle}
+                                    editTaskDescription={handleEditTaskDescription}
+                                />
+                            ))
+                        )}
+                    </motion.div>
+                </AnimatePresence>
             </div>
             <div className={styles.appInfo}>
                 <h4>

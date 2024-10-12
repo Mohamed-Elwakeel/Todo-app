@@ -4,6 +4,7 @@ import * as yup from "yup";
 import styles from "./AddTask.module.css";
 
 export default function AddTask({ onSubmit }) {
+
     const formik = useFormik({
         initialValues: {
             taskTitle: "",
@@ -21,9 +22,10 @@ export default function AddTask({ onSubmit }) {
                 .min(3, "Must be more than 3 letters")
                 .required("Required"),
         }),
-        onSubmit: (values, { setSubmitting }) => {
+        onSubmit: (values, { setSubmitting, resetForm }) => {
             onSubmit(values.taskTitle, values.taskDescription);
             setSubmitting(false);
+            resetForm();
         },
     });
 

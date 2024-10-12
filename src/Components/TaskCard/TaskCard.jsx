@@ -2,6 +2,7 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import EditIcon from "@mui/icons-material/Edit";
 import { Chip } from "@mui/material";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./TaskCard.module.css";
 
 export default function TaskCard({
@@ -49,7 +50,13 @@ export default function TaskCard({
     };
 
     return (
-        <div className={styles.taskContainer}>
+        <motion.div
+            className={styles.taskContainer}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+        >
             <li className={styles.taskItem}>
                 <div className={styles.taskContent}>
                     {isEditingTitle ? (
@@ -127,6 +134,6 @@ export default function TaskCard({
                     onClick={() => deleteTask(task.id)}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 }
