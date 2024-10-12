@@ -1,54 +1,73 @@
 .appContainer {
-    background: url('../assets/12.jpg') no-repeat center center fixed;
-    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+    padding: 2rem;
+}
+
+.appTitle {
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #007bff;
 }
 
 .todoCard {
-    background: url("../assets/debut_light.png");
-    width: 70%;
-    padding: 1.618em;
-    margin: auto;
-    margin-top: 3rem;
-    border-radius: .5rem;
-    box-shadow: 0 5px 15px #444, inset 0 -5px 35px #999;
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    background-color: #fafafa;
 }
 
-.App-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.App-header>h2 {
-    color: #555;
-    font-size: clamp(1.25rem, 5vw, 2.5em);
-    font-family: 'Cabin', 'sans-serif';
-    font-weight: 700;
-    margin-block: 1.5rem;
-    text-align: center;
+.taskList {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .appInfo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    margin: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    text-align: center;
+    color: #666;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
-.appInfo div {
-    font-size: 1.2rem;
+.appInfo strong {
+    font-weight: 600;
+    font-size: 1.25rem;
 }
 
+.appInfo h4 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 40em) {
     .todoCard {
-        width: 75%;
+        width: 95%;
     }
 
-    .appInfo {
-        width: 70%;
+    .taskList {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
 }
