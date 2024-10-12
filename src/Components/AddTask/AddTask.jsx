@@ -4,7 +4,6 @@ import * as yup from "yup";
 import styles from "./AddTask.module.css";
 
 export default function AddTask({ onSubmit }) {
-
     const formik = useFormik({
         initialValues: {
             taskTitle: "",
@@ -58,7 +57,9 @@ export default function AddTask({ onSubmit }) {
                 <div className={styles.formikError}>{formik.errors.taskDescription}</div>
             ) : null}
 
-            <button className={styles.addTaskBtn}>Add</button>
+            <button type="submit" className={styles.addTaskBtn}>
+                Add
+            </button>
         </form>
     );
-};
+}

@@ -1,0 +1,79 @@
+.addTaskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+}
+
+.taskInputLabel {
+    font-size: 1.3rem;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+.taskInput {
+    width: 100%;
+    padding: 0.9rem 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.taskInput:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+.addTaskBtn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: fit-content;
+}
+
+.addTaskBtn:hover {
+    background-color: #0056b3;
+}
+
+.formikError {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: -0.5rem;
+}
+
+@media (max-width: 600px) {
+    .addTaskContainer {
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .taskInput {
+        padding: 0.6rem 0.2rem;
+        font-size: 0.9rem;
+    }
+
+    .addTaskBtn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}

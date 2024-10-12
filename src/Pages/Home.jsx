@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from "react";
-import TaskCard from "../Components/TaskCard/TaskCard";
-import AddTask from "../Components/AddTask/AddTask";
-import styles from "./Home.module.css";
+import React, { useEffect, useState } from 'react';
+import TaskCard from '../Components/TaskCard/TaskCard';
+import AddTask from '../Components/AddTask/AddTask';
+import styles from './Home.module.css';
 
 export default function HomePage() {
-
     const [tasks, setTasks] = useState(() => {
-        const savedTasks = localStorage.getItem("TASKS");
+        const savedTasks = localStorage.getItem('TASKS');
         return savedTasks ? JSON.parse(savedTasks) : [];
     });
 
     useEffect(() => {
-        localStorage.setItem("TASKS", JSON.stringify(tasks));
+        localStorage.setItem('TASKS', JSON.stringify(tasks));
     }, [tasks]);
 
     // Add a new task
     const handleAddTask = (title, description) => {
         setTasks((prevTasks) => [
             ...prevTasks,
-            { id: crypto.randomUUID(), title, description, status: "Not Started" },
+            { id: crypto.randomUUID(), title, description, status: 'Not Started' },
         ]);
     };
 
@@ -56,6 +55,7 @@ export default function HomePage() {
 
     return (
         <div className={styles.appContainer}>
+            <h1 className={styles.appTitle}>Task Manager</h1>
             <div className={styles.todoCard}>
                 <AddTask onSubmit={handleAddTask} />
                 <div className={styles.taskList}>
@@ -76,8 +76,13 @@ export default function HomePage() {
                 </div>
             </div>
             <div className={styles.appInfo}>
-                <div>Created with: React JS, Material UI, and CSS3</div>
-                <div>Coded by: Mohamed Elwakeel</div>
+                <h4>
+                    <strong>Created with: </strong>
+                    React JS, Material UI, and CSS3
+                </h4>
+                <h4>
+                    <strong>Coded by: </strong> Mohamed Elwakeel
+                </h4>
             </div>
         </div>
     );
