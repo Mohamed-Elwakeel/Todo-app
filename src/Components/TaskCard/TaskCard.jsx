@@ -52,9 +52,9 @@ export default function TaskCard({
     return (
         <motion.div
             className={styles.taskContainer}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={false}
+            animate={{ opacity: 1, transform: "none" }}
+            exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
         >
             <li className={styles.taskItem}>

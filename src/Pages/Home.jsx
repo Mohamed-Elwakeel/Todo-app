@@ -3,6 +3,7 @@ import TaskCard from '../Components/TaskCard/TaskCard';
 import AddTask from '../Components/AddTask/AddTask';
 import { AnimatePresence, motion } from "framer-motion";
 import styles from './Home.module.css';
+import ToggleButton from '../Components/ToggleBtn/ToggleBtn';
 
 export default function HomePage() {
     const [tasks, setTasks] = useState(() => {
@@ -56,7 +57,10 @@ export default function HomePage() {
 
     return (
         <div className={styles.appContainer}>
-            <h1 className={styles.appTitle}>Task Manager</h1>
+            <div className={styles.appHeader}>
+                <h1 className={styles.appTitle}>Task Manager</h1>
+                <ToggleButton />
+            </div>
             <div className={styles.todoCard}>
                 <AddTask onSubmit={handleAddTask} />
                 <AnimatePresence>
