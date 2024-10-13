@@ -36,7 +36,7 @@ Ensure you have the following software installed on your machine:
 1. Clone the repository:
 
 ```
-git clone https://github.com/Mohamed-Elwakeel/todo-app-front.git
+git clone https://github.com/Mohamed-Elwakeel/todo-app.git
 ```
 2. Navigate to the project directory:
    
@@ -64,5 +64,5 @@ Navigate to the Sign In, Sign Up, and Home pages to start managing your todos!
 - Framer Motion: Animation library for smooth transitions.
 
 
-Contributing
+# Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests. Please follow the Contributing Guidelines.
