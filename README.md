@@ -6,6 +6,11 @@
 ![Home Page](/src/assets/ToDo-App.png)
 
 
+## Demo
+
+<a href="https://to-do-demo-project.netlify.app/" target="_blank">Live Demo</a>
+
+
 ## Features
 
 - **Todo Management:**
