@@ -35,7 +35,7 @@ export default function LoginPage() {
             <div className={styles.loginCard}>
                 <div className={styles.loginFormContainer}>
                     <h1>Welcome back!</h1>
-                    <p>Enter your credentials to access your account.</p>
+                    <p>Enter any credentials to access your account.</p>
                     <form onSubmit={formik.handleSubmit}>
                         <label htmlFor="email">Email</label>
                         <input
