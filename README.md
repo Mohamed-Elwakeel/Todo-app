@@ -21,7 +21,7 @@
   - Filter tasks by status: Not Started, In Progress, and Finished.
  
 - **User Authentication:**
-  - Login page to authenticate users before accessing the home page.
+  - Login page to authenticate users, you can login in with any email and password, before accessing the home page.
 
 - **Responsive Design:**
   - Optimized for various screen sizes (mobile, tablet, and desktop).
