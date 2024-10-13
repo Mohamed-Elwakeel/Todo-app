@@ -41,7 +41,7 @@ git clone https://github.com/Mohamed-Elwakeel/todo-app.git
 2. Navigate to the project directory:
    
 ```   
-cd todo-app-front
+cd todo-app
 ```
 3. Install dependencies:
 ```
