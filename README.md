@@ -1,6 +1,9 @@
 # Todo App - Frontend
 
-- This is a simple and intuitive Todo App frontend built with React.js. It offers a clean user interface for managing tasks and provides two main pages for the user: Login and Home. The application is designed to handle essential task management functionalities and is responsive across different device sizes.
+- This is a simple and intuitive Todo App frontend built with React.js. It offers a clean user interface for managing tasks and provides two main pages for the user:     
+  Login and Home. The application is designed to handle essential task management functionalities and is responsive across different device sizes.
+
+![Home Page](/src/assets/ToDo-App.png)
 
 
 ## Features
